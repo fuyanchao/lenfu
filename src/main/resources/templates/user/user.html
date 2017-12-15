@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>User测试</title>
+    <style>
+        table{
+            border: 1px solid pink;
+            width: 100%;
+            height: 300px;
+        }
+        tr{
+            border: 1px solid pink;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <td>姓名</td>
+        <td>年龄</td>
+        <td>密码</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user:${userInfo}">
+        <td th:text="${user.getName()}" />
+        <td th:text="${user.getAge()}" />
+        <td th:text="${user.getPassword()}" />
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

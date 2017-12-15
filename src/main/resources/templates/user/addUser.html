@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+username: <input type="text" id="username" value="" />
+age: <input type="number" id="age" value="" />
+password <input type="password" id="password" value="" />
+<button>提交</button>
+
+<script type="application/javascript">
+    $(function () {
+        $('button').click(function () {
+            $.ajax({
+                type:'post',
+                url:'../add',
+                data:{name:$('#username').val(),age:$('#age').val(),password:$('#password').val()},
+                success:function (msg) {
+                    alert(msg);
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>
